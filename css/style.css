@@ -1,14 +1,31 @@
-body { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 1.5rem; margin: 0; padding: 0; }
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab');
+
+body { 
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+  font-size: 1.5rem; 
+  margin: 0; 
+  padding: 0;
+  position: relative;
+}
+
 .container { width: 80%;  margin: 0 auto; }
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Roboto Slab", sans-serif;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
 
 h1 a:link {
   text-decoration: none;
+  color:hsl(0, 49%, 42%);
 }
 
 h1 a:visited {
-  color: #000;
+  color: hsl(0, 49%, 42%);
 }
 
+/** nav **/
 .btn {
   display: inline-block; 
   padding: 6px 12px; 
@@ -41,7 +58,7 @@ h1 a:visited {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: hsl(45, 41%, 92%);
+  background-color: none;
 }
 
 .nav .navbar .btn {
@@ -51,10 +68,10 @@ h1 a:visited {
 
 .nav .navbar a {
   color: hsl(15, 80%, 50%);
+  font-size: 1.8rem;
   font-weight: 600;
-  font-size: 1.2rem;
   text-decoration: none;
-  padding: 16px 9px;
+  padding: 10px 9px;
   white-space: nowrap;
   text-align: center;
 }
@@ -72,7 +89,7 @@ h1 a:visited {
   }
   .nav .navbar {
     flex-direction: row;
-    background: none;
+    background: hsl(45, 41%, 92%);
   }
   .nav .navbar.hidden {
     display: none;
@@ -83,4 +100,39 @@ h1 a:visited {
   .nav .navbar {
     flex-direction: column;
   }
+}
+
+/** Carousel Fade **/
+
+.carousel.fade{
+	opacity: 1;
+}
+
+.carousel.fade .item {
+	transition: opacity ease-out .7s;
+	left: 0;
+	opacity: 0;
+	top: 0;
+	position: absolute;
+	width: 100%;
+	display: block;
+}
+
+.carousel.fade .item:first-child {
+	top: auto;
+	opacity: 1;
+	position: relative;
+}
+
+.carousel.fade .item.active{
+	opacity: 1;
+}
+
+.carousel-control{
+	opacity: 0;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+	background-image: none;
 }
